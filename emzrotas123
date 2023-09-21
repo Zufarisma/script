@@ -314,6 +314,17 @@ function Dropf(list)
             bot:drop(BlockID+1, inventory:getItemCount(BlockID+1))
             sleep(500)
             bot:moveLeft()
+            for _, things in pairs(moonList) do
+                if bot:getInventory():getItemCount(things) > 1 then
+                        bot:drop(things,200)
+                        sleep(1000)
+                        while bot:getInventory():getItemCount(things) > 1 do
+                        bot:moveLeft()
+                        sleep(1000)
+                        bot:drop(things,200)
+                        sleep(1000)
+                        end
+                    end
         end
         GonWebhook(" <a:plash:1146855891681951917> Drop Seed Information <a:plash:1146855891681951917> "..
         "\n <:growbot:992058196439072770> Bot Name : "..bot.name..
