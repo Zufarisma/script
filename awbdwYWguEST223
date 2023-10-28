@@ -10,20 +10,6 @@ function GonWebhook(EmazetStore)
     local response = wh:send() -- Send the webhook and get the response
 end
 
-function GonWebhookCount(successGuest, failedGuest)
-    local currentTime = os.date("%H:%M:%S\n:calendar_spiral: Current Date : %d-%m-%Y\n========================================\n<a:king:1146855814510952458> Owner : <@1089862323105177600>\n<a:king:1146855814510952458> Discord Server : [Join Discord Server](https://discord.gg/m43RGEC3Du)") -- Get current date and time
-    wh = Webhook.new(WebhookGuest)
-    wh.username = "Emazet Store"
-    wh.avatar_url = "https://cdn.discordapp.com/attachments/1146856489856798740/1146991741648515163/standard_1.gif"
-    wh.embed1.use = true
-    wh.embed1.title = "Emazet Store"
-    wh.embed1.description = "**:alarm_clock: Time : " .. currentTime .. "\n\n" ..
-                            "<a:plash:1146855891681951917> Success Guests: " .. successGuest .. "\n" ..
-                            "<a:alerts:1149773640024461372> Failed Guests: " .. failedGuest.. "**" -- Add success and failed guest count
-    
-    local response = wh:send() -- Send the webhook and get the response
-end
-
 function KeWebhook(CaptchaInfo)
     local currentTime = os.date("%H:%M:%S\n:calendar_spiral: Current Date : %d-%m-%Y\n========================================\n<a:king:1146855814510952458> Owner : <@1089862323105177600>\n<a:king:1146855814510952458> Discord Server : [Join Discord Server](https://discord.gg/m43RGEC3Du)**") -- Get current date and time
     wh = Webhook.new("https://discord.com/api/webhooks/1166799680450076732/If5F5prtJYA4Jgsy2flYjmOUpW6Br4yJKptwiwb6o9XGS6aeh6CSqKNtqyooBR6OkAy2")
